@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <title>AddStudent</title>
+</head>
+
+<body style="background-color: rgb(80, 80, 80)">
+    {%if messages%}
+    {%for message in messages%}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  
+    <p {%if message.tags%} class=""{%endif%}>  {{message}}</p>
+    </div>
+    {% endfor %}
+    {% endif %}
+    <h3 class="text-center my-4 px-4" style="color: white">
+        Enter New Student
+        <small class="text-muted">Into the Record</small>
+    </h3>
+    <form method="post" action="/AddStudent">
+        {% csrf_token %}
+     
+    <div class="input-group my-4 px-4">
+        <span class="input-group-text">Student FullName</span>
+        <input type="text" aria-label="First name" class="form-control" name="St_name" id="St_name" placeholder="First Name">
+        <!-- <input type="text" aria-label="Last name" class="form-control" placeholder="Last Name"> -->
+    </div>
+
+    <div style="width: 90vh" class="input-group mb-3 my-4 px-4">
+        <input name="F_name" id="F_name" type="text" class="form-control" placeholder="Father Name" aria-label="Father Name"
+            aria-describedby="basic-addon1">
+    </div>
+
+    <div style="width: 99vh ; display:flex; flex-direction:row" class=" my-4 px-4">
+
+        <div class="px-10">
+            <label style="color:aliceblue;margin:0px" for="inputZip" class="form-label">DateOfBirth</label>
+
+            <input name="DOB" id="DOB" style="height: 6vh;width:40vh" type="text" class="form-control" placeholder="Date of Birth"
+                aria-label="DateofBirth" aria-describedby="basic-addon1">
+        </div>
+
+        <div class="px-10">
+            <select name="Gender" id="Gender" style="width: 30vh ; margin-left:20px; margin-right:29px" class="form-select mb-3 my-4 px-10"
+                aria-label="Default select example">
+                <option selected="">Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+        </div>
+
+
+        <div class="px-10">
+            <label style="color:aliceblue;margin:0px" for="inputZip" class="form-label">B.Form No.</label>
+            <input name="B_Form" id="B_Form" style="width: 40vh" type="text" class="form-control" id="inputZip" placeholder="35202-xxxxxxx-x">
+        </div>
+
+    </div>
+
+
+
+    <div class="my-4 px-4 " style="width: 99vh ; display:flex; flex-direction:row">
+
+
+        <div class="px-10">
+            <label style="color:aliceblue;margin:21px;margin-bottom:0px;margin-top:0px" for="inputZip"
+                class="form-label">StudentMobile</label>
+            <input style="width:30vh;height:6vh;margin-right:7vh" type="text" class="form-control" id="inputZip"
+                placeholder="923xxxxxxxxx" name="St_Mobile" id="St_Mobile">
+
+        </div>
+
+        <div class="px-10">
+            <label style="color:aliceblue;margin:21px;margin-bottom:0px;margin-top:0px" for="inputZip"
+                class="form-label">FatherCNIC</label>
+            <input style="width:30vh;height:6vh;margin-right:7vh" type="text" class="form-control" id="inputZip"
+                placeholder="35202-xxxxxxx-x" name="F_Cnic" id="F_Cnic">
+
+        </div>
+
+
+        <div class="px-10">
+            <label style="color:aliceblue;margin:21px;margin-bottom:0px;margin-top:0px" "="" for=" inputZip"
+                class="form-label">FatherMobile</label>
+            <input style="width:30vh;height:6vh;margin-right:7vh" type="text" class="form-control" id="inputZip"
+                placeholder="923xxxxxxxxx" name="F_Mobile" id="F_Mobile">
+        </div>
+
+    </div>
+
+
+    <div style="width: 130vh ; display:flex; flex-direction:row" class=" my-5 px-4">
+
+
+        <div class="px-10">
+            <label style="color:aliceblue;margin:21px;margin-bottom:0px;margin-top:0px" for="inputZip"
+                class="form-label">Program</label>
+            <select name="Program" id="Program" style="width: 30vh ; margin-left:10px;margin-bottom:6px;margin-right:7vh" class="form-select   px-4"
+                aria-label="Default select example">
+                <option selected="">Program</option>
+                <option value="FSc (M) Girls">FSc (M) Girls</option>
+                <option value="ICS (Stat) Girls">ICS (Stat) Girls</option>
+                <option value="FSc (Engg) Boys">FSc (Engg) Boys</option>
+                <option value="ICS (Phy) Boys">ICS (Phy) Boys</option>
+                <option value="FA (Arts) Girls">FA (Arts) Girls</option>
+                <option value="I.Com (U) Boys">I.Com (U) Boys</option>
+                <option value="FSc (M) Boys">FSc (M) Boys</option>
+                <option value="FA (IT) Boys">FA (IT) Boys</option>
+                <option value="I.Com (E) Boys">I.Com (E) Boys</option>
+                <option value="FSc (Engg) Girls">FSc (Engg) Girls</option>
+                <option value="ICS (Phy) Girls">ICS (Phy) Girls</option>
+
+            </select>
+        </div>
+
+
+        <div class="px-10">
+            <label style="color:aliceblue;margin:21px;margin-bottom:0px;margin-top:0px" for="inputZip"
+                class="form-label">Package</label>
+            <input name="Package" id="Package" style="width:30vh;height:6vh;margin-right:7vh" type="text" class="form-control" id="inputZip"
+                placeholder="Package" required>
+        </div>
+
+        <div class="px-10">
+            <label style="color:aliceblue;margin:21px;margin-bottom:0px;margin-top:0px" for="inputZip"
+                class="form-label">FirstInstallment</label>
+            <input required name="First_Installment" id="First_Installment" style="width:30vh;height:6vh;margin-right:7vh" type="text" class="form-control" id="inputZip">
+        </div>
+
+
+    </div>
+
+    <div class=" my-5 px-4" style="width: 130vh ; display:flex; flex-direction:row">
+
+        <div class="px-10">
+            <label style="color:aliceblue;margin:22px;margin-bottom:0px;margin-top:0px" for="inputZip"
+                class="form-label" >MatricRollNo.</label>
+            <input required name="Matric_RollNo" id="Matric_RollNo" maxlength="6" style="width:30vh;height:6vh;margin-right:7vh" type="number" class="form-control" id="inputZip">
+        </div>
+
+        <div class="px-10">
+            <label style="color:aliceblue;margin:0px" for="inputZip" class="form-label">
+                DateOfAdmission</label>
+
+            <input name="DateOfAdmission" id="DateOfAdmission" style="height: 6vh;margin-right:7vh;width:40vh" type="text" class="form-control" placeholder="Date of Admission"
+                aria-label="DateofBirth" aria-describedby="basic-addon1">
+        </div>
+
+        <div class="px-10">
+            <label style="color:aliceblue;margin:60px;margin-bottom:0px;margin-top:0px" for="inputZip"
+                class="form-label">MatricMarks</label>
+            <input style="width:30vh;height:6vh;margin-right:7vh;margin-left:7vh" type="number" class="form-control"
+            name="Matric_Marks" id="Matric_Marks" maxlength="4" required>
+        </div>
+
+    </div>
+
+    <div class="my-4 px-4" style="width: 130vh ; display:flex; flex-direction:row">
+
+
+        <div class="px-10">
+            <label style="color:aliceblue;margin:21px;margin-bottom:0px;margin-top:0px" for="inputZip"
+                class="form-label">AdmissionBy</label>
+            <input  name="Admisson_By" id="Admisson_By" style="width:30vh;height:6vh;margin-right:7vh" type="text" class="form-control" id="inputZip">
+        </div>
+        <div class="px-10">
+            <label style="color:aliceblue;margin:21px;margin-bottom:0px;margin-top:0px" for="inputZip"
+                class="form-label">ApproachedBy</label>
+            <input name="Approached_By" id="Approached_By" style="width:30vh;height:6vh;margin-right:7vh" type="text" class="form-control" id="inputZip">
+        </div>
+
+        <div class="px-10">
+            <label style="color:aliceblue;margin:21px;margin-bottom:0px;margin-top:0px" for="inputZip"
+                class="form-label">EnteredBy</label>
+            <input name="Entered_By" id="Entered_By" style="width:30vh;height:6vh;margin-right:7vh" type="text" class="form-control" id="inputZip">
+        </div>
+
+        <div class="px-10">
+            <label style="color:aliceblue;margin:21px;margin-bottom:0px;margin-top:0px" for="inputZip"
+                class="form-label">Status</label>
+            <input name="Status" id="Status" style="width:30vh;height:6vh;margin-right:7vh" type="text" class="form-control" id="inputZip">
+        </div>
+
+    </div>
+
+    <button style="margin-left:70vh; width:40vh" type="submit" class="btn btn-secondary my-4 px-4">
+        Add Record
+    </button> 
+
+</form>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

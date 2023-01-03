@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <title>Document</title>
+</head>
+<body>
+    <table class="table table-dark table-striped">
+        <thead>
+          <tr >
+            <th style="position: sticky; top:0" scope="col">Sr No.</th>
+            <th style="position: sticky; top:0" scope="col">Student Name</th>
+            <th style="position: sticky; top:0" scope="col">Father Name</th>
+            <th style="position: sticky; top:0" scope="col">DOB</th>
+            <th style="position: sticky; top:0" scope="col">Gender</th>
+            <th style="position: sticky; top:0" scope="col">B.Form No.</th>
+            <th style="position: sticky; top:0" scope="col">Student Mobile</th>
+            <th style="position: sticky; top:0" scope="col">Father Cnic</th>
+            <th style="position: sticky; top:0" scope="col">Father Mobile</th>
+            <th style="position: sticky; top:0" scope="col">Date Of Admission</th>
+            <th style="position: sticky; top:0" scope="col">Program</th>
+            <th style="position: sticky; top:0" scope="col">Package</th>
+            <th style="position: sticky; top:0" scope="col">First Installment</th>
+            <th style="position: sticky; top:0" scope="col">Matric RollNo</th>
+            <th style="position: sticky; top:0" scope="col">Matric Marks</th>
+            <th style="position: sticky; top:0" scope="col">Admisson By</th>
+            <th style="position: sticky; top:0" scope="col">Approached By</th>
+            <th style="position: sticky; top:0" scope="col">Entered By</th>
+            <th style="position: sticky; top:0" scope="col">Status</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {% for Std in Stds%}
+          <tr>
+            <th scope="row">{{Std.Sr_No}}</th>
+            <td>{{Std.St_name}}</td>
+            <td>{{Std.F_name}}</td>
+            <td>{{Std.DOB}}</td>
+            <td>{{Std.Gender}}</td>
+            <td>{{Std.B_Form}}</td>
+            <td>{{Std.St_Mobile}}</td>
+            <td>{{Std.F_Cnic}}</td>
+            <td>{{Std.F_Mobile}}</td>
+            <td>{{Std.DateOfAdmission}}</td>
+            <td>{{Std.Program}}</td>
+            <td>{{Std.Package}}</td>
+            <td>{{Std.First_Installment}}</td>
+            <td>{{Std.Matric_RollNo}}</td>
+            <td>{{Std.Matric_Marks}}</td>
+            <td>{{Std.Admisson_By}}</td>
+            <td>{{Std.Approached_By}}</td>
+            <td>{{Std.Entered_By}}</td>
+            <td>{{Std.Status}}</td>
+           
+            
+          </tr>
+        
+          
+          {% endfor %}
+        </tbody>
+      </table>
+  
+
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
+</html>
